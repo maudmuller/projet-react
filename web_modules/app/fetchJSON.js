@@ -14,6 +14,15 @@ export default (url, data) => fetch(url, data).then((res) => {
         ))
     }
 
+    <ul className={styles.list}>
+      {
+        album &&
+        albums.map((album, index) => {
+          return <li className={styles.album} key={index}>{album.name}</li>
+        })
+      }
+    </ul>
+
     // http not ok
     return new Promise((resolve, reject) => res.json().then(catchError))
     
